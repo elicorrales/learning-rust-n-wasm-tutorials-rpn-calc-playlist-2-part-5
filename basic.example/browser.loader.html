@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <title>This is a test</title>
+        Hello There This Page Runs Javascript that loads/runs WASM....
+    </body>
+
+    <script>
+        debugger;
+        WebAssembly.instantiateStreaming(fetch('myfirst.wasm'))
+            .then(result => {
+                debugger;
+                let rtn = result.instance.exports.main();
+                console.log(rtn);
+            })
+    </script>
+
+</html>
